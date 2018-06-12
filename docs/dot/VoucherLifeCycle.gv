@@ -1,0 +1,30 @@
+// Copyright (c) 2018, Backyard Innovations Pte. Ltd., Singapore.
+//
+// Released under the terms of the Apache License 2.0
+// See: file LICENSE in root directory for details.
+//
+// This file contains Intellectual Property that belongs to
+// Backyard Innovations Pte Ltd., Singapore.
+//
+// Authors: Santhosh Raju <santhosh@byisystems.com>
+//          Cherry G. Mathew <cherry@byisystems.com>
+//
+digraph {
+    size="4,4";
+    Layout=fdp;
+
+    // States of the FSM describing the Voucher Life Cycle
+    START
+    phantom
+    // "valid" is an accepting state, but not a final state
+    valid [peripheries=2]
+    redeemed [peripheries=2]
+    cancelled [peripheries=2]
+
+    // Rules for state transitions of the FSM
+    START -> phantom
+    phantom -> valid [label="issue"]
+    valid -> valid [label="transfer"]
+    valid -> redeemed [label="redeem"]
+    valid -> cancelled [label="cancel"]
+}

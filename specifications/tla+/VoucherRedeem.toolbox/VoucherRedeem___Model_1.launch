@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.lamport.tla.toolbox.tool.tlc.modelCheck">
+<stringAttribute key="TLCCmdLineParameters" value=""/>
+<stringAttribute key="configurationName" value="Model_1"/>
+<booleanAttribute key="deferLiveness" value="false"/>
+<intAttribute key="dfidDepth" value="100"/>
+<booleanAttribute key="dfidMode" value="false"/>
+<intAttribute key="distributedFPSetCount" value="0"/>
+<stringAttribute key="distributedNetworkInterface" value="192.168.56.1"/>
+<intAttribute key="distributedNodesCount" value="1"/>
+<stringAttribute key="distributedTLC" value="off"/>
+<stringAttribute key="distributedTLCVMArgs" value=""/>
+<intAttribute key="fpBits" value="1"/>
+<intAttribute key="fpIndex" value="1"/>
+<intAttribute key="maxHeapSize" value="25"/>
+<intAttribute key="maxSetSize" value="1000000"/>
+<booleanAttribute key="mcMode" value="true"/>
+<stringAttribute key="modelBehaviorInit" value="VTPInit"/>
+<stringAttribute key="modelBehaviorNext" value="VTPNext"/>
+<stringAttribute key="modelBehaviorSpec" value="VTPSpec"/>
+<intAttribute key="modelBehaviorSpecType" value="2"/>
+<stringAttribute key="modelBehaviorVars" value="msgs, vtpState, cState, vState, vtpRPrepared, hState"/>
+<stringAttribute key="modelComments" value=""/>
+<booleanAttribute key="modelCorrectnessCheckDeadlock" value="false"/>
+<listAttribute key="modelCorrectnessInvariants">
+<listEntry value="1VTPTypeOK"/>
+<listEntry value="1VTPConsistent"/>
+</listAttribute>
+<listAttribute key="modelCorrectnessProperties">
+<listEntry value="1VTPSpec"/>
+</listAttribute>
+<stringAttribute key="modelExpressionEval" value=""/>
+<stringAttribute key="modelParameterActionConstraint" value=""/>
+<listAttribute key="modelParameterConstants">
+<listEntry value="C;;{&quot;c1&quot;};0;0"/>
+<listEntry value="H;;{&quot;h1&quot;};0;0"/>
+<listEntry value="V;;{&quot;v1&quot;};0;0"/>
+</listAttribute>
+<stringAttribute key="modelParameterContraint" value=""/>
+<listAttribute key="modelParameterDefinitions"/>
+<stringAttribute key="modelParameterModelValues" value="{}"/>
+<stringAttribute key="modelParameterNewDefinitions" value=""/>
+<intAttribute key="numberOfWorkers" value="2"/>
+<booleanAttribute key="recover" value="false"/>
+<stringAttribute key="result.mail.address" value=""/>
+<intAttribute key="simuAril" value="-1"/>
+<intAttribute key="simuDepth" value="100"/>
+<intAttribute key="simuSeed" value="-1"/>
+<stringAttribute key="specName" value="VoucherRedeem"/>
+<stringAttribute key="view" value=""/>
+<booleanAttribute key="visualizeStateGraph" value="false"/>
+</launchConfiguration>
