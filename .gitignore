@@ -1,0 +1,52 @@
+.cvsignore
+CVS/
+#.*~$
+^CVS
+.*/CVS
+.*/CVS/.*
+.*/NONE
+^\.cvsignore$
+\.orig$
+.DS_Store
+
+#output files from compilations
+obj/
+tools/*/obj
+^obj\.[0-9a-z]*$
+/obj\.[0-9a-z]*$
+sys/arch/*/compile/*
+Atffile
+.gdbinit
+*.o
+*.tmp
+*.out
+
+#hg stuff
+.hgignore
+.hg/
+hg-cvs-sync.sh
+
+#tex stuff
+*.log
+*.aux
+*.pdf
+*.gz
+*.out
+
+#bibtex stuff
+*.bbl
+*.blg
+*.dvi
+*.ent
+
+#beamer stuff
+*.nav
+*.snm
+*.toc
+*.vrb
+
+#TLA+ stuff
+*Model_1_SnapShot*
+
+#Graphviz output
+*.png
