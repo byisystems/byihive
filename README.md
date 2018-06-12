@@ -22,13 +22,14 @@ Here's our timeline:
 While in the modern era Erlang seems to be an odd choice of computer language to implement byihive in, we had very logical reasons to chose Erlang.
 
 According to [Wikipedia](https://en.wikipedia.org/wiki/Erlang_(programming_language)), Erlang has the following properties:
-
+```
 The Erlang runtime system is known for its designs that are well suited for systems with the following characteristics:
   - Distributed
   - Fault-tolerant
   - Soft real-time,
   - Highly available, non-stop applications
   - Hot swapping, where code can be changed without stopping a system.[4]
+```
 
 These are very attractive properties for any system that is as critical as one that involves people transacting with each other. We found that Erlang had been used in critical communications infrastructure, and is seasoned and proven. 
 
@@ -36,8 +37,9 @@ We use formal specification methods to design byihive. The first reference spec 
 See the [specifications](/specifications/) directory to have a look.
 
 Here too, Erlang proved to be attractive, as our specs naturally mapped to the code, allowing for a very robust design/implementation methodology. Wikipedia says:
-
+```
 The Erlang programming language is known for the following properties:[5]
   - Immutable data
   - Pattern matching
   - Functional programming
+```
