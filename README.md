@@ -6,7 +6,7 @@ You can find out more about RFC3506 here: https://tools.ietf.org/rfc/rfc3506.txt
 
 The byihive project aims to bring peer to peer transactability to everyone.
 
-Our goal is to bring out a reference implementation in erlang (see ["Why Erlang"](#Why-Erlang) below) so that anyone can use it in their applications.
+Our goal is to bring out a reference implementation in Erlang (see ["Why Erlang"](#Why-Erlang) below) so that anyone can use it in their applications.
 
 Applications of byihive include:
  - Creating your own peer to peer ledger system - similar to splitwise, but no splitwise to track you.
@@ -19,7 +19,7 @@ Here's our timeline:
  
 ### Why Erlang
 
-While in the modern era Erlang seems to be an odd choice of computer language to implement byihive in, we had very logical reasons to chose Erlang.
+While in the modern era Erlang seems to be an odd choice of computer language to implement byihive in, we had very logical reasons for doing so.
 
 According to [Wikipedia](https://en.wikipedia.org/wiki/Erlang_(programming_language)), Erlang has the following properties:
 ```
@@ -43,3 +43,5 @@ The Erlang programming language is known for the following properties:[5]
   - Pattern matching
   - Functional programming
 ```
+
+This gives us a really tight design/implementation loop for byihive - a necessary condition for code quality!
