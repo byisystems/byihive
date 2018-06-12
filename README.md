@@ -17,11 +17,11 @@ Here's our timeline:
  - End of Q2 2018 - we release the first erlang draft code which is capable of managing a complete voucher life cycle.
  - End of Q3 2018 - we release the first reference API which is usable for local currency communities to implement their own apps.
  
-###Why Erlang
+### Why Erlang
 
 While in the modern era Erlang seems to be an odd choice of computer language to implement byihive in, we had very logical reasons to chose Erlang.
 
-According to Wikipedia, Erlang has the following properties:
+According to [Wikipedia](https://en.wikipedia.org/wiki/Erlang_(programming_language)), Erlang has the following properties:
 
 The Erlang runtime system is known for its designs that are well suited for systems with the following characteristics:
   - Distributed
