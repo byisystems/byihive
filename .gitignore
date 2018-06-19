@@ -50,3 +50,6 @@ hg-cvs-sync.sh
 
 #Graphviz output
 *.png
+
+#Do not ignore PDFs in docs
+!docs/pdf/*.pdf
