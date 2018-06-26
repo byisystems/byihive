@@ -1,3 +1,4 @@
+## --------------------------------------------------------------------
 ## Copyright (c) 2018, Backyard Innovations Pte. Ltd., Singapore.
 ##
 ## Released under the terms of the Apache License 2.0
@@ -6,8 +7,8 @@
 ## This file contains Intellectual Property that belongs to
 ## Backyard Innovations Pte Ltd., Singapore.
 ##
-## Authors: Santhosh Raju <santhosh@byisystems.com>
-##
+## Author: Santhosh Raju    <santhosh@byisystems.com>
+## --------------------------------------------------------------------
 DOT=dot
 SIZE=9,15\!
 DPI=100
