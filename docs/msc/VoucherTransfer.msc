@@ -1,0 +1,85 @@
+// ---------------------------------------------------------------------
+// Copyright (c) 2018, Backyard Innovations Pte. Ltd., Singapore.
+//
+// Released under the terms of the Apache License 2.0
+// See: file LICENSE that came with this software for details.
+//
+// This file contains Intellectual Property that belongs to
+// Backyard Innovations Pte Ltd., Singapore.
+//
+// Authors: Santhosh Raju <santhosh@byisystems.com>
+//          Cherry G. Mathew <cherry@byisystems.com>
+// ---------------------------------------------------------------------
+msc {
+  hscale="1.1",
+  width="1080",
+  wordwraparcs=true;
+
+  User,
+  VTP,
+  "Holder (Receive)",
+  "Holder (Transmit)",
+  Voucher;
+
+  ---                                      [label="Initialize entities and voucher"];
+
+  "Holder (Transmit)"->"Holder (Transmit)" [label="Holding Voucher"];
+  User->"Holder (Receive)"    	           [label="propose_decision"];
+  User->"Holder (Transmit)"      	   [label="propose_decision"];
+  User->Voucher     		           [label="prepare_voucher"];
+
+  ---               		           [label="Prepare VTP"];
+
+  User->VTP         		           [label="add_entity \n (Holder (Receive))"];
+  User->VTP         		           [label="add_entity \n (Holder (Transmit))"];
+  User->VTP         		           [label="add_voucher"];
+  User->VTP         		           [label="vtp_start \n transaction request"];
+
+  ---               		           [label="Two phase commit - Soliciting votes"];
+
+  VTP->"Holder (Receive)"    	           [label="query_decision"];
+  VTP->"Holder (Transmit)"                 [label="query_decision"];
+  VTP->VTP          		           [label="Wait for decision"];
+  VTP<-"Holder (Receive)"    	           [label="receive_decision"];
+  VTP<-"Holder (Transmit)"                 [label="receive_decision"];
+
+  ---               		           [label="Two phase commit - Decide concensus"];
+
+  VTP<-VTP          		           [label="Count concensus"];
+
+  ---               		           [label="Two phase commit - Agree (COMMIT)"];
+
+  VTP->"Holder (Receive)"    	           [label="commit"];
+  VTP->"Holder (Transmit)"                 [label="commit"];
+  VTP->Voucher      		           [label="commit"];
+
+  VTP->VTP          		           [label="Wait for ACK"];
+
+  "Holder (Receive)"->"Holder (Receive)"   [label="Holding Voucher"];
+
+  VTP<-"Holder (Receive)"    	           [label="acknowledgement"];
+  VTP<-"Holder (Transmit)"       	   [label="acknowledgement"];
+  VTP<-Voucher      		           [label="acknowledgement"];
+
+  VTP->VTP          		           [label="COMMIT"];
+
+  User<-VTP         		           [label="vtp_end \n transaction committed"];
+
+  ---               		           [label="Two phase commit - Disagree (ABORT)"];
+
+  VTP->"Holder (Receive)"    	           [label="abort"];
+  VTP->"Holder (Transmit)"       	   [label="abort"];
+  VTP->Voucher      		           [label="abort"];
+
+  VTP->VTP          		           [label="Wait for ACK"];
+
+  VTP<-"Holder (Receive)"    	           [label="acknowledgement"];
+  VTP<-"Holder (Transmit)"       	   [label="acknowledgement"];
+  VTP<-Voucher      		           [label="acknowledgement"];
+
+  VTP->VTP          		           [label="ABORT"];
+
+  "Holder (Transmit)"->"Holder (Transmit)" [label="Holding Voucher"];
+
+  User<-VTP         	    	           [label="vtp_end \n transaction aborted"];
+}

@@ -1,0 +1,17 @@
+%% -*- tab-width: 4;erlang-indent-level: 4;indent-tabs-mode: nil -*-
+%% ex: ts=4 sw=4 et
+{application, vts,
+ [
+  {description, "Voucher transaction system"},
+  {vsn, "0.1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+%  {mod, { vtp, []}},
+  {env, []},
+  {maintainers, ["Santhosh Raju"]},
+  {licenses, [""]},
+  {links, [{"", ""}]}
+ ]}.
