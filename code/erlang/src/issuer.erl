@@ -13,7 +13,7 @@
 
 %%% --------------------------------------------------------------------
 %%% This module implements the behavior of a Issuer behavior mentioned
-%%% in the "Issuer Life Cycle" TLA+ specification.The transition rules
+%%% in the "Issuer Life Cycle" TLA+ specification.The transition
 %%% rules can be found in the DOT specification.
 %%%
 %%% This module is expected to act as one of the participating entity

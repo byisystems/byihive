@@ -13,7 +13,7 @@
 
 %%% --------------------------------------------------------------------
 %%% This module implements the behavior of a Holder (Transmit) behavior
-%%% mentioned in the "Holder Recieve Life Cycle" TLA+ specification.
+%%% mentioned in the "Holder Transmit Life Cycle" TLA+ specification.
 %%% the transition rules can be found in the DOT specification.
 %%%
 %%% This module is expected to act as one of the participating entity
@@ -63,12 +63,12 @@ holder_transmit() ->
 %% commit - This is the message sent by the VTP process (VtpPid) which
 %% commits the current transaction when both parties in the Voucher
 %% Issue / Transfer transaction is in agreement. An acknowledgement
-%% is sent back by the Holder (Recieve).
+%% is sent back by the Holder (Transmit).
 %%
 %% abort - This is the message sent by the VTP process (VtpPid) which
 %% aborts the current transaction either or both the parties in the
 %% Voucher Issue / Transfer transaction are not in agreement. An
-%% acknowledgement is sent back by the Holder (Recieve).
+%% acknowledgement is sent back by the Holder (Transmit).
 %% ---------------------------------------------------------------------
 holder_transmit(Holders, HolderData) ->
     receive

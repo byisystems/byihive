@@ -13,7 +13,7 @@
 
 %%% --------------------------------------------------------------------
 %%% This module implements the State Machine defined in the "Holder
-%%% Recieve Life Cycle" TLA+ specification. A diagram of the states and
+%%% Transmit Life Cycle" TLA+ specification. A diagram of the states and
 %%% the transition rules can be found in the DOT specification.
 %%%
 %%% This Finite State Machine (FSM) is private to the entity who is

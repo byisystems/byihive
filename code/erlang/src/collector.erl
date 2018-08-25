@@ -12,9 +12,9 @@
 %%% --------------------------------------------------------------------
 
 %%% --------------------------------------------------------------------
-%%% This module implements the behavior of a Collector behavior mentioned
-%%% in the "Collector Life Cycle" TLA+ specification.The transition rules
-%%% rules can be found in the DOT specification.
+%%% This module implements the behavior of a Collector behavior
+%%% mentioned in the "Collector Life Cycle" TLA+ specification. The
+%%% transition rules can be found in the DOT specification.
 %%%
 %%% This module is expected to act as one of the participating entity
 %%% for the Voucher Issue or Voucher Cancel behavior described in the
