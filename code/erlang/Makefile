@@ -28,6 +28,7 @@ clean:
 	./rebar clean
 	rm -fr .rebar/
 	rm -fr $(EBIN)
+	rm -fr *.dump $(EBIN)/*.dump
 
 distclean: clean
 	rm -f $(SCRIPTS)/*.$(GEN)
