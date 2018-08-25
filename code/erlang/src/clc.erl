@@ -53,7 +53,7 @@ init_fsm(State) ->
 	aborted ->
 	    spawn(fun() -> aborted() end);
 	_ ->
-	    log("[~p] Invalid collector state (~p) specified~n", [?MODULE, State])
+	    log("[~p] !!! Invalid collector state (~p) specified !!!~n", [?MODULE, State])
     end.
 
 %% ---------------------------------------------------------------------
@@ -115,7 +115,7 @@ initialize() ->
 	    OpPid ! {self(), {init, NextState}},
 	    log("[~p] Initialized collector from ~p to ~p~n", [?MODULE, State, NextState]);
 	_ ->
-	    log("[~p] Invalid operation on initializing collector~n", [?MODULE])
+	    log("[~p] !!! Invalid operation on initializing collector !!!~n", [?MODULE])
     end.
 
 waiting() ->
@@ -129,7 +129,7 @@ waiting() ->
 	    OpPid ! {self(), {abort, NextState}},
 	    log("[~p] State of collector set from ~p to ~p~n", [?MODULE, State, NextState]);
         _ ->
-            log("[~p] Invalid operation on waiting state of collector~n", [?MODULE])
+            log("[~p] !!! Invalid operation on waiting state of collector !!!~n", [?MODULE])
     end.
 
 prepared() ->
@@ -147,17 +147,17 @@ prepared() ->
 	    OpPid ! {self(), {abort, NextState}},
 	    log("[~p] State of collector set from ~p to ~p~n", [?MODULE, State, NextState]);
         _ ->
-            log("[~p] Invalid operation on prepared state of collector~n", [?MODULE])
+            log("[~p] !!! Invalid operation on prepared state of collector !!!~n", [?MODULE])
     end.
 
 redeemed() ->
     receive
         _ ->
-            log("[~p] Invalid operation on redeemed state of collector~n", [?MODULE])
+            log("[~p] !!! Invalid operation on redeemed state of collector !!!~n", [?MODULE])
     end.
 
 aborted() ->
     receive
         _ ->
-            log("[~p] Invalid operation on aborted state of collector~n", [?MODULE])
+            log("[~p] !!! Invalid operation on aborted state of collector !!!~n", [?MODULE])
     end.

@@ -55,7 +55,7 @@ init_fsm(State) ->
 	aborted ->
 	    spawn(fun() -> aborted() end);
 	_ ->
-	    log("[~p] Invalid holder (transmit) state (~p)  specified~n", [?MODULE, State])
+	    log("[~p] !!! Invalid holder (transmit) state (~p) specified !!!~n", [?MODULE, State])
     end.
 
 %% ---------------------------------------------------------------------
@@ -125,7 +125,7 @@ initialize() ->
 	    OpPid ! {self(), {init, NextState}},
 	    log("[~p] Initialized holder (transmit) from ~p to ~p~n", [?MODULE, State, NextState]);
 	_ ->
-	    log("[~p] Invalid operation on initializing holder (transmit)~n", [?MODULE])
+	    log("[~p] !!! Invalid operation on initializing holder (transmit) !!!~n", [?MODULE])
     end.
 
 holding() ->
@@ -139,7 +139,7 @@ holding() ->
 	    OpPid ! {self(), {abort, NextState}},
 	    log("[~p] State of holder (transmit) set from ~p to ~p~n", [?MODULE, State, NextState]);
         _ ->
-            log("[~p] Invalid operation on holding state of holder (transmit)~n", [?MODULE])
+            log("[~p] !!! Invalid operation on holding state of holder (transmit) !!!~n", [?MODULE])
     end.
 
 prepared() ->
@@ -157,23 +157,23 @@ prepared() ->
 	    OpPid ! {self(), {abort, NextState}},
 	    log("[~p] State of holder (transmit) set from ~p to ~p~n", [?MODULE, State, NextState]);
         _ ->
-            log("[~p] Invalid operation on prepared state of holder (transmit)~n", [?MODULE])
+            log("[~p] !!! Invalid operation on prepared state of holder (transmit) !!!~n", [?MODULE])
     end.
 
 transferred() ->
     receive
         _ ->
-            log("[~p] Invalid operation on transferred state of holder (transmit)~n", [?MODULE])
+            log("[~p] !!! Invalid operation on transferred state of holder (transmit) !!!~n", [?MODULE])
     end.
 
 redeemed() ->
     receive
         _ ->
-            log("[~p] Invalid operation on redeemed state of holder (transmit)~n", [?MODULE])
+            log("[~p] !!! Invalid operation on redeemed state of holder (transmit) !!!~n", [?MODULE])
     end.
 
 aborted() ->
     receive
         _ ->
-            log("[~p] Invalid operation on aborted state of holder (transmit)~n", [?MODULE])
+            log("[~p] !!! Invalid operation on aborted state of holder (transmit) !!!~n", [?MODULE])
     end.

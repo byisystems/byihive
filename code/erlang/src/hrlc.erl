@@ -53,7 +53,7 @@ init_fsm(State) ->
 	aborted ->
 	    spawn(fun() -> aborted() end);
 	_ ->
-	    log("[~p] Invalid holder (receive) state (~p)  specified~n", [?MODULE, State])
+	    log("[~p] !!! Invalid holder (receive) state (~p) specified !!!~n", [?MODULE, State])
     end.
 
 %% ---------------------------------------------------------------------
@@ -131,7 +131,7 @@ initialize() ->
 	    OpPid ! {self(), {init, NextState}},
 	    log("[~p] Initialized holder (receive) from ~p to ~p~n", [?MODULE, State, NextState]);
 	_ ->
-	    log("[~p] Invalid operation on initializing holder (receive)~n", [?MODULE, ?MODULE])
+	    log("[~p] !!! Invalid operation on initializing holder (receive) !!!~n", [?MODULE, ?MODULE])
     end.
 
 waiting() ->
@@ -145,7 +145,7 @@ waiting() ->
 	    OpPid ! {self(), {abort, NextState}},
 	    log("[~p] State of holder (receive) set from ~p to ~p~n", [?MODULE, State, NextState]);
         _ ->
-            log("[~p] Invalid operation on waiting state of holder (receive)~n", [?MODULE, ?MODULE])
+            log("[~p] !!! Invalid operation on waiting state of holder (receive) !!!~n", [?MODULE, ?MODULE])
     end.
 
 prepared() ->
@@ -167,17 +167,17 @@ prepared() ->
 	    OpPid ! {self(), {abort, NextState}},
 	    log("[~p] State of holder (receive) set from ~p to ~p~n", [?MODULE, State, NextState]);
         _ ->
-            log("[~p] Invalid operation on prepared state of holder (receive)~n", [?MODULE])
+            log("[~p] !!! Invalid operation on prepared state of holder (receive) !!!~n", [?MODULE])
     end.
 
 holding() ->
     receive
         _ ->
-            log("[~p] Invalid operation on holding state of holder (receive)~n", [?MODULE])
+            log("[~p] !!! Invalid operation on holding state of holder (receive) !!!~n", [?MODULE])
     end.
 
 aborted() ->
     receive
         _ ->
-            log("[~p] Invalid operation on aborted state of holder (receive)~n", [?MODULE])
+            log("[~p] !!! Invalid operation on aborted state of holder (receive) !!!~n", [?MODULE])
     end.

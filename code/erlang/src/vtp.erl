@@ -75,7 +75,7 @@ vtp(Entities, Vouchers, Clients, #vtp_messages{messages = Messages} = VtpMessage
 	    log("[~p] Added voucher: ~p~n", [?MODULE, VoucherPid]),
             vtp(Entities, [VoucherPid|Vouchers], Clients, VtpMessages);
         {vtp_start, ClientPid} ->
-            log("[~p] 1st phase, gather the votes ~n", [?MODULE]),
+            log("[~p] *** 1st phase, gather the votes ***~n", [?MODULE]),
 	    % This is basically the VTP querying each of entities
 	    % to see if they are "prepared" for the transaction.
             vtp_broadcast(Entities, {query_decision, self()}),
@@ -99,7 +99,7 @@ vtp(Entities, Vouchers, Clients, #vtp_messages{messages = Messages} = VtpMessage
 %% the Entities "agree" or "abort" if any of the Entity "disagree"
 %% ---------------------------------------------------------------------
 vtp_decide(Entities, Vouchers, Clients, Messages) ->
-    log("[~p] 2nd phase, try to commit ~n", [?MODULE]),
+    log("[~p] *** 2nd phase, try to commit ***~n", [?MODULE]),
     Consensus = lists:all(fun(Message) -> Message == yes end, Messages),
     Decision = case Consensus of
         true ->

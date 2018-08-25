@@ -55,7 +55,7 @@ init_fsm(State) ->
 	aborted ->
 	    spawn(fun() -> aborted() end);
 	_ ->
-	    log("[~p] Invalid issuer state (~p)  specified~n", [?MODULE, State])
+	    log("[~p] !!! Invalid issuer state (~p) specified !!!~n", [?MODULE, State])
     end.
 
 %% ---------------------------------------------------------------------
@@ -125,7 +125,7 @@ initialize() ->
 	    OpPid ! {self(), {init, NextState}},
 	    log("[~p] Initialized issuer from ~p to ~p~n", [?MODULE, State, NextState]);
 	_ ->
-	    log("[~p] Invalid operation on initializing issuer~n", [?MODULE])
+	    log("[~p] !!! Invalid operation on initializing issuer !!!~n", [?MODULE])
     end.
 
 waiting() ->
@@ -139,7 +139,7 @@ waiting() ->
 	    OpPid ! {self(), {abort, NextState}},
 	    log("[~p] State of issuer set from ~p to ~p~n", [?MODULE, State, NextState]);
         _ ->
-            log("[~p] Invalid operation on waiting state of issuer~n", [?MODULE])
+            log("[~p] !!! Invalid operation on waiting state of issuer !!!~n", [?MODULE])
     end.
 
 prepared() ->
@@ -157,23 +157,23 @@ prepared() ->
 	    OpPid ! {self(), {abort, NextState}},
 	    log("[~p] State of issuer set from ~p to ~p~n", [?MODULE, State, NextState]);
         _ ->
-            log("[~p] Invalid operation on prepared state of issuer~n", [?MODULE])
+            log("[~p] !!! Invalid operation on prepared state of issuer !!!~n", [?MODULE])
     end.
 
 cancelled() ->
     receive
         _ ->
-            log("[~p] Invalid operation on cancelled state of issuer~n", [?MODULE])
+            log("[~p] !!! Invalid operation on cancelled state of issuer !!!~n", [?MODULE])
     end.
 
 issued() ->
     receive
         _ ->
-            log("[~p] Invalid operation on issued state of issuer~n", [?MODULE])
+            log("[~p] !!! Invalid operation on issued state of issuer !!!~n", [?MODULE])
     end.
 
 aborted() ->
     receive
         _ ->
-            log("[~p] Invalid operation on aborted state of issuer~n", [?MODULE])
+            log("[~p] !!! Invalid operation on aborted state of issuer !!!~n", [?MODULE])
     end.
