@@ -53,3 +53,9 @@ hg-cvs-sync.sh
 
 #Do not ignore PDFs in docs
 !docs/pdf/*.pdf
+
+# Erlang stuff
+*.beam
+ebin/
+.rebar/
+*.dump
