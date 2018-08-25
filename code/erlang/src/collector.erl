@@ -114,6 +114,6 @@ collector(Collectors, CollectorData) ->
 	    State = clc:abort(FsmPid, CollectorData#collector_data.state),
 	    UpdatedCollectorData = CollectorData#collector_data{state=State},
 	    log("[~p] collector has entered the state: ~p~n", [?MODULE, UpdatedCollectorData#collector_data.state]),
-            log_final_state(commit,"Collector"),
+            log_final_state(abort,"Collector"),
             VtpPid ! {acknowledgement}
     end.
