@@ -24,8 +24,8 @@ digraph {
 
     // Rules for state transitions of the FSM
     START -> phantom
-    phantom -> valid [label="issue"]
-    valid -> valid [label="transfer"]
-    valid -> redeemed [label="redeem"]
-    valid -> cancelled [label="cancel"]
+    phantom -> valid [label=" issue"]
+    valid -> valid [label=" transfer"]
+    valid -> redeemed [label=" redeem"]
+    valid -> cancelled [label=" cancel"]
 }
